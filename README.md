@@ -1,54 +1,49 @@
-# 🚀 FixTrack Pro | Smart Municipal & Community Portal
+# FixTrack Pro — Cape IT Assist Repair & Issue Management System
 
-FixTrack Pro is an advanced municipal issue-tracking and community engagement platform engineered to bridge the gap between citizens and local government authorities. The system features a synchronized Android mobile application, a robust PHP/MySQL backend API, and a fully featured web portal with role-based dashboards.
+![CI Pipeline](https://github.com/DugStellar/FixTrackPRO-FinalSubmission/actions/workflows/ci.yml/badge.svg)
 
----
-
-## 👥 Development Team
-This project was designed, architected, and built by:
-* **TRISTAN**
-* **DEVON**
-* **KEEYAN**
+**FixTrack Pro** is an integrated hardware/software repair and issue management system developed by **Cybertech Solutions** for **Cape IT Assist** (XISD6329 Portfolio of Evidence — Final Submission). The platform digitizes client issue reporting, ticket tracking, and administrative triage across a native Android application, a responsive web microsite, and a centralized PHP/MySQL RESTful API.
 
 ---
 
-## 🌟 Key Features & Architecture
-
-* **Role-Based Portals:** Secure authentication distinguishing between standard Citizens (`User`) and System Administrators (`Admin`/`Lecturer`).
-* **Android & Web Sync:** Seamless database synchronization allowing citizens to log issues and upload photos from mobile or web.
-* **Citizen Features:** 
-  * Interactive Landing Page with community infrastructure showcase.
-  * Dedicated **My Reports** progress tracker (`?view=my_reports`) to monitor issue statuses in real-time.
-  * Community Raffles & Winners display (accessible to logged-in users).
-  * Direct Municipal Support Contact and Inbox replies.
-* **Admin Control Center:** Report resolution management (Pending, In Progress, Resolved), image attachments previewing, monthly raffle winner drawing, and an administrative inbox for user queries.
+## 🎥 Project Demonstration Video
+* **Unlisted YouTube Walkthrough:** [Insert Your Unlisted YouTube Link Here][cite: 2]
 
 ---
 
-## ⚙️ Local Development Setup (XAMPP & PHP)
+## 📦 Download & Install (Android App)
+To bypass Google Play Console developer fees while keeping the production build accessible for assessment and testing, the signed Android binaries are hosted directly under **GitHub Releases**:
+1. Navigate to the **[Releases](https://github.com/DugStellar/FixTrackPRO-FinalSubmission/releases)** section on the right sidebar of this repository.
+2. Download **`app-release.apk`** for direct installation on any Android device or emulator (such as BlueStacks).
+3. *(Optional)* **`app-release.aab`** is also attached as the signed Android App Bundle artifact.
 
-To run FixTrack Pro locally on your machine using XAMPP, follow these step-by-speed instructions:
+---
 
-### 1. Prerequisites
-* Download and install [XAMPP](https://www.apachefriends.org/index.html) (featuring Apache and MySQL).
+## 👥 Team Roster & Roles (Cybertech Solutions)
+| Team Member | Student Number | Primary Role | Key Responsibilities |
+| :--- | :--- | :--- | :--- |
+| **Devon Adams** | ST10439194 | Project Lead & QA Engineer | Android Kotlin architecture, QA testing, unit/UI validation |
+| **Tristan Booysen** | ST10452370] | Lead System Architect & DevOps | Full-stack integration, web microsite, PHP/MySQL API, CI/CD pipeline |
+| **Keeyan Bowman** | [ST10076256] | Requirements Analyst & Backend Architect | Requirements documentation, database schema, release packaging |
 
-### 2. Place Project Files in `htdocs`
-1. Navigate to your XAMPP root directory (typically `C:\xampp\`).
-2. Open the **`htdocs`** folder (`C:\xampp\htdocs\`).
-3. Place your project folder (e.g., `fixtrack_api`) directly inside `htdocs` so the path reads:
-   `C:\xampp\htdocs\fixtrack_api\`
+---
 
-### 3. Configure the Database
-1. Open the **XAMPP Control Panel** and click **Start** next to **Apache** and **MySQL**.
-2. Open your browser and go to `http://localhost/phpmyadmin/`.
-3. Create a new database matching your configuration (e.g., `fixtrack_db`).
-4. Import your database tables (`users`, `reports`, `contact_messages`) or ensure your `db_connect.php` file points to your local database credentials:
-   - **Host:** `localhost`
-   - **Username:** `root`
-   - **Password:** `` (empty by default)
-   - **Database Name:** `fixtrack_db`
+## 🏗️ System Architecture & Tech Stack
+* **Mobile Frontend:** Native Android application built in **Kotlin** (Android Studio), communicating asynchronously with the backend API using JSON/HTTP requests.
+* **Web Microsite & Admin Portal:** Responsive **HTML5, CSS3, and JavaScript** interface providing public issue submission, ticket reference generation, and an authenticated Admin triage dashboard[cite: 2].
+* **Backend API:** Modular **PHP 8.x** endpoints hosted under `htdocs/` using **PDO prepared statements** for secure database operations[cite: 2].
+* **Database:** **MySQL** (`fixtrack_db`) managed via XAMPP / phpMyAdmin[cite: 2].
+* **DevOps & CI:** Automated syntax linting and repository structure verification via **GitHub Actions** (`.github/workflows/ci.yml`)[cite: 2].
 
-### 4. Accessing the Web Portal
-Open your web browser and navigate to:
+---
+
+## 📂 Repository Structure
 ```text
-http://localhost/fixtrack_api/index.php
+FixTrackPRO-FinalSubmission/
+├── .github/
+│   └── workflows/
+│       └── ci.yml              # Automated GitHub Actions CI pipeline
+├── AndroidApp/                 # Complete Android Studio Kotlin source code
+├── htdocs/                     # Web microsite & PHP RESTful API endpoints
+├── fixtrack_db.sql             # MySQL database schema and seed structure
+└── README.md                   # Project documentation & setup guide
